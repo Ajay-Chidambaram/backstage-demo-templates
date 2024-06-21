@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-template
+  description: A collection of all Presidio Demo templates
+spec:
+  targets:
+    - ./nodejs_tpl.yaml
+    - ./terraform_tpl.yaml 
+    - ./springboot_tpl.yaml

@@ -1,7 +1,6 @@
 variable "bu_division" {
   description = "Must match one of the predefined values from locals_business_units.tf"
   type        = string
-  default     = ""
 }
 
 variable "business_unit" {
@@ -19,7 +18,6 @@ variable "sbu_division" {
 variable "financial_owner_name" {
   type        = string
   description = "Owner first name and last name. Will be used to identify the owner of the environment."
-  default     = ""
 }
 
 variable "financial_owner_email" {
@@ -31,7 +29,6 @@ variable "financial_owner_email" {
 variable "tech_owner_name" {
   type        = string
   description = "Names of two people who owns this Virtual Machine"
-  default     = ""
 }
 
 variable "tech_owner_email" {

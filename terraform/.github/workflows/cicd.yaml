@@ -32,4 +32,15 @@ jobs:
         run: terraform validate
 
       - name: Deploy Terraform infrastructure
+        run: terraform plan 
+        env:
+          TF_VAR_bu_division: ${{ vars.bu_division }}
+          TF_VAR_financial_owner_name: ${{ vars.financial_owner_name }}
+          TF_VAR_technical_owner_name: ${{ vars.technical_owner_name }}
+
+      - name: Deploy Terraform infrastructure
         run: terraform apply -auto-approve
+        env:
+          TF_VAR_bu_division: ${{ vars.bu_division }}
+          TF_VAR_financial_owner_name: ${{ vars.financial_owner_name }}
+          TF_VAR_technical_owner_name: ${{ vars.technical_owner_name }}

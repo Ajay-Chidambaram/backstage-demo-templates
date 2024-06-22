@@ -27,6 +27,35 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+        description:
+          title: Description
+          type: string
+          description: Description of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        bu_division:
+          title: Business Division
+          type: string
+          description: Business Division of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        financial_owner_name: 
+          title: Financial Owner Name
+          type: string
+          description: Financial Owner Name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        technical_owner_name:
+          title: Technical Owner Name
+          type: string
+          description: Technical Owner Name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        
     - title: Choose a location
       required:
         - repoUrl
@@ -59,6 +88,15 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        secrets: {
+          AWS_ACCESS_KEY_ID: '${AWS_ACCESS_KEY_ID}',
+          AWS_SECRET_ACCESS_KEY: '${ secrets.AWS_SECRET_ACCESS_KEY }'
+        }
+        repoVariables: {
+          bu_division: '${parameters.bu_division }',
+          financial_owner_name: '${ parameters.financial_owner_name }',
+          technical_owner_name: '${ parameters.technical_owner_name }'
+        }
 
     # The final step is to register our new component in the catalog.
     - id: register

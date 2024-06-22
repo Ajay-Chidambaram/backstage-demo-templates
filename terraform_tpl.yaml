@@ -88,15 +88,13 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        secrets: {
-          AWS_ACCESS_KEY_ID: '${AWS_ACCESS_KEY_ID}',
-          AWS_SECRET_ACCESS_KEY: '${ secrets.AWS_SECRET_ACCESS_KEY }'
-        }
-        repoVariables: {
-          bu_division: '${parameters.bu_division }',
-          financial_owner_name: '${ parameters.financial_owner_name }',
-          technical_owner_name: '${ parameters.technical_owner_name }'
-        }
+        secrets:
+          AWS_ACCESS_KEY_ID: ${{ AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ AWS_SECRET_ACCESS_KEY }}
+        repoVariables:
+          bu_division: ${{ parameters.bu_division }}
+          financial_owner_name: ${{ parameters.financial_owner_name }}
+          technical_owner_name: ${{ parameters.technical_owner_name }}
 
     # The final step is to register our new component in the catalog.
     - id: register

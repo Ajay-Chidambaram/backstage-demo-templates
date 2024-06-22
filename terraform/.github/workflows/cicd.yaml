@@ -21,9 +21,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws-session-token: "${{ secrets.AWS_SESSION_TOKEN }}"
           aws-region: "us-east-1" # Replace with the desired AWS region
 
       - name: Initialize Terraform
@@ -35,13 +35,13 @@ jobs:
       - name: Deploy Terraform infrastructure
         run: terraform plan 
         env:
-          TF_VAR_bu_division: ${{ vars.bu_division }}
-          TF_VAR_financial_owner_name: ${{ vars.financial_owner_name }}
-          TF_VAR_technical_owner_name: ${{ vars.technical_owner_name }}
+          TF_VAR_bu_division: "${{ vars.bu_division }}"
+          TF_VAR_financial_owner_name: "${{ vars.financial_owner_name }}"
+          TF_VAR_technical_owner_name: "${{ vars.technical_owner_name }}"
 
       - name: Deploy Terraform infrastructure
         run: terraform apply -auto-approve
         env:
-          TF_VAR_bu_division: ${{ vars.bu_division }}
-          TF_VAR_financial_owner_name: ${{ vars.financial_owner_name }}
-          TF_VAR_technical_owner_name: ${{ vars.technical_owner_name }}
+          TF_VAR_bu_division: "${{ vars.bu_division }}"
+          TF_VAR_financial_owner_name: "${{ vars.financial_owner_name }}"
+          TF_VAR_technical_owner_name: "${{ vars.technical_owner_name }}"

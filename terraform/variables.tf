@@ -26,18 +26,18 @@ variable "financial_owner_email" {
   default     = ""
 }
 
-variable "tech_owner_name" {
+variable "technical_owner_name" {
   type        = string
   description = "Names of two people who owns this Virtual Machine"
 }
 
-variable "tech_owner_email" {
+variable "technical_owner_email" {
   type        = string
   description = "Email address will be used for communication to the App team when VM needs to be terminated or any maintenance activity that AWS needs to perform on the VM"
   default     = ""
 }
 
-variable "tech_team_owner" {
+variable "technical_team_owner" {
   type        = string
   description = "Application team that uses this Virtual Machine"
   default     = ""

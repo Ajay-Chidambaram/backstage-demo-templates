@@ -1,6 +1,6 @@
 resource "aws_iam_role" "example_user" {
       name = "example-backstage-user"
-      assume_role_policy = {
+      assume_role_policy = jsondecode({
         Version = "2012-10-17"
         Statement = [
           {
@@ -11,5 +11,5 @@ resource "aws_iam_role" "example_user" {
             Action = "sts:AssumeRole"
           }
         ]
-      }
+      })
 }

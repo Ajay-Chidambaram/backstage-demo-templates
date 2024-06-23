@@ -3,7 +3,8 @@ kind: Component
 metadata:
   name: ${{ values.name | dump }}
   annotations:
-    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
+    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}} # This is the GitHub slug of the project from the template
+    backstage.io/techdocs-ref: dir:.  # This is the location of the techdocs files (docs/index.md by default)
 spec:
   type: service
   owner: user:guest

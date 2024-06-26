@@ -8,3 +8,5 @@ app.listen(7777, () => {
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello, World!' });
 });
+
+// TODO: Add more routes here

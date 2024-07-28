@@ -1,0 +1,17 @@
+name: Terraform Check
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    terraform:
+        uses: Ajay-Chidambaram/terraform-infracost-action/.github/workflows/main.yml@main
+        # runs-on: ubuntu-latest
+        secrets: inherit
+        permissions:
+            contents: read
+            # Required to post comments
+            pull-requests: write
+        
